@@ -1,5 +1,8 @@
 package com.demo.main;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class StringCalculator {
 
 	/*
@@ -21,6 +24,9 @@ public class StringCalculator {
 
 		// removing the delimiter and storing in a String array.
 		String[] numbersArray = numbersWithoutDelimiter.split(delimiter);
+
+		List<Integer> negativeNumbers = new ArrayList<Integer>();
+
 		int result = 0;
 		if (numbersArray.length < 2) {
 			throw new RuntimeException("Atleast 2 numbers are required");
@@ -28,8 +34,14 @@ public class StringCalculator {
 
 		for (String number : numbersArray) {
 
-			// Checking whether input is valid number or not.
-			result += Integer.parseInt(number);
+			int toCheckNumberIsNeg = Integer.parseInt(number);
+			if (toCheckNumberIsNeg < 0) {
+				negativeNumbers.add(toCheckNumberIsNeg);
+			}
+			result += toCheckNumberIsNeg;
+		}
+		if (negativeNumbers.size() > 0) {
+			throw new RuntimeException("Negatives not allowed: " + negativeNumbers.toString());
 		}
 		return result;
 	}
