@@ -31,4 +31,10 @@ public class StringCalculatorTest {
 	public final void whenOnlyOneCorrectValueIsPresentThenThrowRuntimeException() {
 		StringCalculator.add("1,\n");
 	}
+	
+	
+	@Test
+	public final void whenMultipleDelimiterThenSeparateNumbersAndFindSum() {
+	    assertEquals(3, StringCalculator.add("//;\\n1;2"));
+	}
 }
