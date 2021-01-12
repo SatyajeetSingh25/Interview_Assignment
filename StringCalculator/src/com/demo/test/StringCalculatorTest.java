@@ -49,11 +49,17 @@ public class StringCalculatorTest {
 	public final void whenNegativeNumbersAreUsedThenRuntimeExceptionIsThrown() {
 
 		try {
-			StringCalculator.add("3,-6,15,-18,46,33");
+			StringCalculator.add("-3,-6,15");
 		} catch (RuntimeException e) {
-			assertEquals("Negatives not allowed: [-6, -18]", e.getMessage());
+			assertEquals("Negatives not allowed: [-3, -6]", e.getMessage());
 		}
 
 	}
+	
+	//Testcase to check whether num is greater than 1000 or not if yes then don't include its value to the sum.
+	@Test
+    public final void whenOneOrMoreNumbersAreGreaterThan1000ThenItIsNotIncludedInSum() {
+        assertEquals(2, StringCalculator.add("2,1001"));
+    }
 
 }

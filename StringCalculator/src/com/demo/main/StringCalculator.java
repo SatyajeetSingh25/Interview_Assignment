@@ -6,11 +6,7 @@ import java.util.List;
 public class StringCalculator {
 
 	/*
-	 * Support different delimiters to change a delimiter, the beginning of the
-	 * string will contain a separate line that looks like this:
-	 * “//[delimiter]\n[numbers…]” for example “//;\n1;2” should return three where
-	 * the default delimiter is ‘;’ . the first line is optional. all existing
-	 * scenarios should still be supported
+	 * Numbers bigger than 1000 should be ignored, so adding 2 + 1001 = 2
 	 */
 	public static int add(String numbers) {
 
@@ -35,10 +31,15 @@ public class StringCalculator {
 		for (String number : numbersArray) {
 
 			int toCheckNumberIsNeg = Integer.parseInt(number);
+
+			// Checking whether Number is negative or positive
 			if (toCheckNumberIsNeg < 0) {
 				negativeNumbers.add(toCheckNumberIsNeg);
 			}
-			result += toCheckNumberIsNeg;
+
+			// Checking whether Number is greater then 1000 or not
+			if (toCheckNumberIsNeg < 1000)
+				result += toCheckNumberIsNeg;
 		}
 		if (negativeNumbers.size() > 0) {
 			throw new RuntimeException("Negatives not allowed: " + negativeNumbers.toString());
