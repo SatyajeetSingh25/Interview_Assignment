@@ -21,25 +21,23 @@ import com.example.assignment.repository.UserRepository;
 public class UserRestController {
 
 	@Autowired
-	public PriorityRepository priorityRepository ;
-	
+	public PriorityRepository priorityRepository;
+
 	@Autowired
-	public UserRepository userRepository ;
-	
+	public UserRepository userRepository;
+
+	// Get method to fetch all the Priorities
 	@GetMapping("/allpriorities")
 	public List<Priority> retrieveAllPriorities() {
 		return priorityRepository.findAll();
 	}
-	
+
+	// Post method to add a user
 	@PostMapping("/adduser")
 	public void addUser(@Valid @RequestBody User user) {
-		
-		
-		 userRepository.save(user);
-		 System.out.println("User Saved Successfully.");
+
+		userRepository.save(user);
+		System.out.println("User Saved Successfully.");
 	}
-	
 
 }
-
-

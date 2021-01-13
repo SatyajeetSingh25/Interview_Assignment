@@ -19,7 +19,7 @@ public class AdminController {
 	@Autowired
 	public UserPrioritySatisfactionService userPrioritySatisfactionService;
 	
-	
+	// Post method to add a Priority
 	@PostMapping("/addpriority")
 	public void addPriority(@Valid @RequestBody Priority priority) {
 		userPrioritySatisfactionService.addPriority(priority);

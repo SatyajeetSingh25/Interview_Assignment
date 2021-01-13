@@ -2,9 +2,11 @@ package com.example.assignment;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.context.annotation.Bean;
-import org.springframework.orm.hibernate5.LocalSessionFactoryBean;
 
+/**
+ * @author Satyajeet
+ *
+ */
 @SpringBootApplication
 public class AssignmentApplication {
 
@@ -12,9 +14,4 @@ public class AssignmentApplication {
 		SpringApplication.run(AssignmentApplication.class, args);
 	}
 
-	@Bean(name="entityManagerFactory")
-	public LocalSessionFactoryBean sessionFactory() {
-	LocalSessionFactoryBean sessionFactory = new LocalSessionFactoryBean();
-	return sessionFactory;
-	}
 }

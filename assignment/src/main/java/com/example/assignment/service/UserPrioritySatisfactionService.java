@@ -2,17 +2,19 @@ package com.example.assignment.service;
 
 import java.util.List;
 
-import org.springframework.stereotype.Service;
-
 import com.example.assignment.entitty.Priority;
 import com.example.assignment.entitty.User;
 
-@Service
+
 public interface UserPrioritySatisfactionService {
 
+	// Method to return all the Priorities
 	List<Priority> getAllPriority();
 
+	// Method to add a new Priority
+	Priority addPriority(Priority priority);
+
+	// Method to add a new User
 	User addUser(User user);
 
-	Priority addPriority(Priority priority);
 }
