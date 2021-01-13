@@ -1,0 +1,28 @@
+{
+  "userId" : 1,
+
+ "userName" : "Satyajeet Singh",
+
+ "priorities" : [
+		{
+			"priority_id" : 1,
+			"priority_Name":"Connection",
+			"priority_Satisfaction_Rating":4
+		},
+		{
+			"priority_id" : 2,
+			"priority_Name":"Relationships",
+			"priority_Satisfaction_Rating":3
+		},
+		{
+			"priority_id" : 3,
+			"priority_Name":"Wealth",
+			"priority_Satisfaction_Rating":5
+		},
+		{
+			"priority_id" : 4,
+			"priority_Name":"Relationships",
+			"priority_Satisfaction_Rating":3
+		}
+	]
+}
